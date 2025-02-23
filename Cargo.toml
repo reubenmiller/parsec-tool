@@ -29,11 +29,9 @@ sha2 = "0.9.9"
 log = "0.4.14"
 rcgen = { version = "0.13.1", features = ["pem"] }
 
-[package.metadata.patch]
-crates=["rcgen"]
-
 [patch.crates-io]
-rcgen = { path = './target/patch/rcgen-0.13.1' }
+# TODO: Remove once https://github.com/rustls/rcgen/pull/272 is merged
+rcgen = { git = 'https://github.com/rustls/rcgen.git' , rev = "refs/pull/272/head" }
 
 [lib]
 name = "parsec_tool"

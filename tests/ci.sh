@@ -14,12 +14,6 @@ error_msg () {
 export PARSEC_SERVICE_ENDPOINT="unix:/tmp/parsec.sock"
 export RUST_LOG=error
 
-#TODO: This applies the rcgen patch that exposes the PKCS_RSA_PSS_SHA256 and PKCS_RSA_PSS_SHA384 types. Remove this
-#      when the corresponding patch gets merged. Also remove rcgen+0.9.3.patch.
-rustup install 1.77.1 # We know that this version works for patch-crate
-cargo +1.77.1 install patch-crate --version 0.1.9
-cargo patch-crate
-
 ##################
 # Get Parameters #
 ##################
